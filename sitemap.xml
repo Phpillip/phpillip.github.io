@@ -2,98 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
             <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>            <priority>0</priority>            <changefreq>monthly</changefreq>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/</loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/console-commands</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/console-commands</loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/content-formats</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/content-markdown</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/content-formats</loc>
-            <lastmod>2015-10-01T08:15:02+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/content-property-handlers</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/content-retrieving-content</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/content-markdown</loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/controller-content</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/controller-custom</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/content-property-handlers</loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/controller-format</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/controller-template</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/content-retrieving-content</loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/feature-helpers</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>http://localhost/controller-content</loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>http://localhost/controller-custom</loc>
-            <lastmod>2015-10-01T08:15:02+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>http://localhost/controller-format</loc>
-            <lastmod>2015-10-01T08:15:02+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>http://localhost/controller-template</loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>http://localhost/feature-helpers</loc>
-            <lastmod>2015-10-01T08:15:02+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc></loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>http://localhost/feature-sitemap</loc>
-            <lastmod>2015-10-01T18:35:30+02:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://phpillip.github.io/feature-sitemap</loc>
+            <lastmod>2015-10-01T22:55:47+02:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
     </urlset>
