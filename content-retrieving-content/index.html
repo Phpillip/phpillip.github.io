@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+                    <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+            <title>Phpillip</title>
+
+            <meta name="author" content="Thomas Jarrand">
+            <meta name="description" content="Phpillip documentation">
+            <link rel="canonical" href="http://localhost/content-retrieving-content">
+        
+                    <link rel="stylesheet" href="/css/style.css">
+        
+                    </head>
+    <body>
+        <div id="#top" class="container">
+    <div class="row">
+        <div class="content col-sm-9">
+                <h1>Retrieving content</h1>
+<h2>The content repository</h2>
+<p>The content repository service is responsible for fetching you content, you'll find it in the Application under the <em>content_repository</em> key:</p>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">];</span>
+</code></pre>
+<p>When parsing a content, the repository returns an associative array with the following keys:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Presence</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slug</td>
+<td>Added if not provided</td>
+<td>Slug, based on the source file name</td>
+</tr>
+<tr>
+<td>lastModified</td>
+<td>Added if not provided</td>
+<td>Last modification of the source file</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Parsed if provided</td>
+<td>If a <code>date</code> property exists, parse it as DateTime</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>Parsed if provided</td>
+<td>If a <code>date</code> property exists, parse it as DateTime</td>
+</tr>
+<tr>
+<td>content</td>
+<td>Added for Markdown files</td>
+<td>Content of the Markdown file, converted to HTML</td>
+</tr>
+<tr>
+<td>...</td>
+<td>Provided</td>
+<td>Any other key present in the source file</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Need more/differents properties? You can <a href="../content/property-handlers">add your own</a></p>
+</blockquote>
+<h2>Fetching content</h2>
+<h3>Get a single content</h3>
+<p>The <code>getContent</code> method expect a content type and a content name and return a single content:</p>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="c1">// Get a content matching `my-content.*` contents in &#39;src/Resources/data/foo&#39;:</span>
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContent</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;my-content&#39;</span><span class="p">);</span>
+
+<span class="c1">// Result:</span>
+<span class="p">[</span>
+    <span class="s1">&#39;slug&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;my-content&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lastModified&#39;</span> <span class="o">=&gt;</span> <span class="nx">DateTime</span><span class="p">,</span>
+    <span class="c1">// ... Any other key present in the source file</span>
+<span class="p">]</span>
+</code></pre>
+<h3>Get all contents</h3>
+<p>The <code>getContents</code> method expect a content type and return all its contents:</p>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="c1">// Get all contents in &#39;src/Resources/data/foo&#39;:</span>
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+
+<span class="c1">// Result:</span>
+<span class="p">[</span>
+    <span class="s1">&#39;my-content&#39;</span>       <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;slug&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my-content&#39;</span><span class="p">,</span> <span class="s1">&#39;lastModified&#39;</span> <span class="o">=&gt;</span> <span class="nx">DateTime</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="s1">&#39;my-other-content&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;slug&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my-other-content&#39;</span><span class="p">,</span> <span class="s1">&#39;lastModified&#39;</span> <span class="o">=&gt;</span> <span class="nx">DateTime</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="c1">// ...</span>
+<span class="p">]</span>
+</code></pre>
+<p>In a list, the contents are indexed by default by their source file name (a.k.a <em>slug</em>).</p>
+<h3>Indexing and ordering contents</h3>
+<p>Say you have a <code>post</code> content that contains a <code>date</code> property, you can get all the <em>posts</em> indexed by date:</p>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="c1">// Get all contents in &#39;src/Resources/data/post&#39; indexed by &#39;date&#39;:</span>
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">);</span>
+
+<span class="c1">// Result:</span>
+<span class="p">[</span>
+    <span class="mi">1441836000</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="nx">DateTime</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my-first-post&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="mi">1443474500</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="nx">DateTime</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my-second-post&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="c1">// ...</span>
+<span class="p">]</span>
+</code></pre>
+<p>A third parameter is provided to sort the resulting array:</p>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="c1">// Get older post first (&#39;date&#39; ascending):</span>
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+
+<span class="c1">// Get latest post first (&#39;date&#39; descending):</span>
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</code></pre>
+        </div>
+        <div class="side-bar col-sm-3">
+            <a id="logo" class="logo" href="/">
+                Phpillip
+            </a>
+            <div class="menu">
+                <h5 class="title">
+    CONSOLE
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/console-commands">
+                Phpillip&#039;s console
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    CONTENT
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-formats">
+                Supported formats
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-markdown">
+                Markdown
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-property-handlers">
+                Property Handlers
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link active" href="/content-retrieving-content">
+                Retrieving content
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    CONTROLLER
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-content">
+                Content Controller
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-custom">
+                Custom Controller
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-format">
+                Route format
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-template">
+                Template resolution
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    FEATURE
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-helpers">
+                Route Helpers
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-sitemap">
+                Sitemap
+            </a>
+        </li>
+    </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer container">
+    <a class="back-to-top" href="#top">
+        Back to top
+    </a>
+</footer>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+                    <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+            <title>Phpillip</title>
+
+            <meta name="author" content="Thomas Jarrand">
+            <meta name="description" content="Phpillip documentation">
+            <link rel="canonical" href="http://localhost/controller-template">
+        
+                    <link rel="stylesheet" href="/css/style.css">
+        
+                    </head>
+    <body>
+        <div id="#top" class="container">
+    <div class="row">
+        <div class="content col-sm-9">
+                <h1>Template resolution</h1>
+<p>Phpillip provide the same type of template resolution that you get in Symfony.
+When a Controller don't return a <em>Response</em>, Phpillip will try to create one by finding and rendering a matching template.</p>
+<h2>For content routes</h2>
+<p>If a route is declared as having a <em>content</em>, Phpillip will look for the  template: <code>[content_type]/[show|list].[format].twig</code></p>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="c1">// For single content:</span>
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/{post}&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">);</span>
+
+<span class="c1">// The template: &#39;src/Resources/views/post/show.html.twig&#39;</span>
+</code></pre>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="c1">// For several contents:</span>
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">paginate</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">);</span>
+<span class="c1">// or</span>
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">contents</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">);</span>
+
+<span class="c1">// The template: &#39;src/Resources/views/post/list.html.twig&#39;</span>
+</code></pre>
+<h2>For Class controllers</h2>
+<p>If you declare you controller as a Class Controller:</p>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="s1">&#39;Acme\Controller\BlogController::index&#39;</span><span class="p">);</span>
+</code></pre>
+<p>Phpillip will look for the template <code>[ControllerName]/[actionName].[format].twig</code> (just like Symfony does).</p>
+<p>In our example: <code>src/Resources/views/Blog/index.html.twig</code></p>
+<p><strong>Note:</strong> Phpillip look for a twig template matching the format of your route.</p>
+        </div>
+        <div class="side-bar col-sm-3">
+            <a id="logo" class="logo" href="/">
+                Phpillip
+            </a>
+            <div class="menu">
+                <h5 class="title">
+    CONSOLE
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/console-commands">
+                Phpillip&#039;s console
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    CONTENT
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-formats">
+                Supported formats
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-markdown">
+                Markdown
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-property-handlers">
+                Property Handlers
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-retrieving-content">
+                Retrieving content
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    CONTROLLER
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-content">
+                Content Controller
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-custom">
+                Custom Controller
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-format">
+                Route format
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link active" href="/controller-template">
+                Template resolution
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    FEATURE
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-helpers">
+                Route Helpers
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-sitemap">
+                Sitemap
+            </a>
+        </li>
+    </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer container">
+    <a class="back-to-top" href="#top">
+        Back to top
+    </a>
+</footer>
+    </body>
+</html>

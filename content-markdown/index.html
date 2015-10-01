@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+                    <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+            <title>Phpillip</title>
+
+            <meta name="author" content="Thomas Jarrand">
+            <meta name="description" content="Phpillip documentation">
+            <link rel="canonical" href="http://localhost/content-markdown">
+        
+                    <link rel="stylesheet" href="/css/style.css">
+        
+                    </head>
+    <body>
+        <div id="#top" class="container">
+    <div class="row">
+        <div class="content col-sm-9">
+                <h1>Markdown</h1>
+<p>Phpillip is designed to parse Markdown as a first-choice content format.</p>
+<p>Markdown provides a cleanway of writing structured text and is easily converted to HTML.</p>
+<p>Phpillip rely on <a href="http://parsedown.org/" target="_blank">Parsedown</a> for parsing Markdown, in the Markdown decoder.</p>
+<p><strong>Note:</strong> if you're not happy with it, you can always <a href="content-formats">setup you own encoder</a>.</p>
+<h2>The Markdown header</h2>
+<p>YAML, JSON and XML are key/values formats, so they can be easily parsed as associative array.</p>
+<p>The Markdown can't. That's why Phpillip's markdown parser is a bit special.</p>
+<p>The content of the file is parsed and converted to HTML.
+The result is then stored into the <code>content</code> key of an associative array.</p>
+<p>You can define additional keys and values for content by writing a YAML header:</p>
+<pre><code>---
+title: "My first blog post"
+description: "A fine blog post, you will like it."
+---
+
+# My post title
+
+My content goes _here_!</code></pre>
+<p>This file would be decoded as the following array:</p>
+<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<span class="p">[</span>
+    <span class="s1">&#39;title&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;My first blog post&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;A fine blog post, you will like it.&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;content&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;&lt;h1&gt;My post title&lt;/h1&gt;&lt;p&gt;My content goes &lt;em&gt;here&lt;/em&gt;!&lt;/p&gt;&#39;</span>
+<span class="p">]</span>
+</code></pre>
+<h2>Syntax highlighting</h2>
+<p>Thanks to Parsedown, Phpillip supports Github Flavored Markdown.
+That means you can define a language for your code blocks:</p>
+<pre><code>``` php
+$this-&gt;isPhp();
+```
+
+``` javascript
+this.isJavascript();
+```</code></pre>
+<p>Phpillip provides syntax highlighting for code block that define a language. He entrust <a href="http://pygments.org/" target="_blank">Pygments</a>, a python command line tool, to do the job.</p>
+<p>In order to get that feature, you'll need to install Pygments:</p>
+<pre><code>pip install Pygments</code></pre>
+<p><em>Note:</em> requires <a href="https://www.python.org/downloads/" target="_blank">Python</a></p>
+        </div>
+        <div class="side-bar col-sm-3">
+            <a id="logo" class="logo" href="/">
+                Phpillip
+            </a>
+            <div class="menu">
+                <h5 class="title">
+    CONSOLE
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/console-commands">
+                Phpillip&#039;s console
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    CONTENT
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-formats">
+                Supported formats
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link active" href="/content-markdown">
+                Markdown
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-property-handlers">
+                Property Handlers
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-retrieving-content">
+                Retrieving content
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    CONTROLLER
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-content">
+                Content Controller
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-custom">
+                Custom Controller
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-format">
+                Route format
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-template">
+                Template resolution
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    FEATURE
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-helpers">
+                Route Helpers
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-sitemap">
+                Sitemap
+            </a>
+        </li>
+    </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer container">
+    <a class="back-to-top" href="#top">
+        Back to top
+    </a>
+</footer>
+    </body>
+</html>

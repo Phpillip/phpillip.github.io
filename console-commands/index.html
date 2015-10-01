@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+                    <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+            <title>Phpillip</title>
+
+            <meta name="author" content="Thomas Jarrand">
+            <meta name="description" content="Phpillip documentation">
+            <link rel="canonical" href="http://localhost/console-commands">
+        
+                    <link rel="stylesheet" href="/css/style.css">
+        
+                    </head>
+    <body>
+        <div id="#top" class="container">
+    <div class="row">
+        <div class="content col-sm-9">
+                <h1>Phpillip's console</h1>
+<blockquote>
+<p>Phpillip uses Symfony console. So, in order to get the full list of available commands, just call <code>bin/console</code>.</p>
+</blockquote>
+<p>Phpillip provides 3 commands:</p>
+<h2>Build</h2>
+<p>Build the static files to <code>/dist</code>:</p>
+<p><strong>Usage:</strong></p>
+<pre><code>phpillip:build [options] [--] [&lt;host&gt;] [&lt;destination&gt;]</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>host</code>: What should be used as domain name for absolute url generation?</li>
+<li><code>destination</code>: Full path to destination directory</li>
+</ul>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>--no-sitemap</code>: Don't build the sitemap</li>
+<li><code>--no-expose</code>: Don't expose the public directory after build</li>
+</ul>
+<p>Example:</p>
+<pre><code>bin/console phpillip:build my-domain.com</code></pre>
+<h2>Watch</h2>
+<p>Have Phpillip watch for any changes in <code>/src</code> and rebuild the files automatically:</p>
+<p><strong>Usage:</strong></p>
+<pre><code>phpillip:watch [options]</code></pre>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>--period=PERIOD</code>: Set the polling period in seconds (default: 1)</li>
+</ul>
+<p>Example:</p>
+<pre><code>bin/console phpillip:watch</code></pre>
+<h2>Serve</h2>
+<p>You can also live-preview your website without building it by launching the Phpillip local PHP server:</p>
+<p><strong>Usage:</strong></p>
+<pre><code>phpillip:serve [options] [--] [&lt;address&gt;]</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>address</code>: address:port (default: &quot;127.0.0.1&quot;)</li>
+</ul>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-p</code>, <code>--port=PORT</code>: Address port number (default: &quot;8080&quot;)</li>
+</ul>
+<p>Example:</p>
+<pre><code>bin/console phpillip:serve</code></pre>
+<p>Your website will be available at <a href="http://localhost:8080" target="_blank"><a href="http://localhost:8080">http://localhost:8080</a></a></p>
+<p><strong>Note:</strong></p>
+<p>It's a Symfony console so you can use shortcuts ;)</p>
+<pre><code># Build
+bin/console p:b
+
+# Watch
+bin/console p:w
+
+# Serve
+bin/console p:s</code></pre>
+        </div>
+        <div class="side-bar col-sm-3">
+            <a id="logo" class="logo" href="/">
+                Phpillip
+            </a>
+            <div class="menu">
+                <h5 class="title">
+    CONSOLE
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link active" href="/console-commands">
+                Phpillip&#039;s console
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    CONTENT
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-formats">
+                Supported formats
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-markdown">
+                Markdown
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-property-handlers">
+                Property Handlers
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/content-retrieving-content">
+                Retrieving content
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    CONTROLLER
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-content">
+                Content Controller
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-custom">
+                Custom Controller
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-format">
+                Route format
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/controller-template">
+                Template resolution
+            </a>
+        </li>
+    </ul>
+<h5 class="title">
+    FEATURE
+</h5>
+<ul class="category nav nav-pills nav-stacked">
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-helpers">
+                Route Helpers
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-sitemap">
+                Sitemap
+            </a>
+        </li>
+    </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer container">
+    <a class="back-to-top" href="#top">
+        Back to top
+    </a>
+</footer>
+    </body>
+</html>
