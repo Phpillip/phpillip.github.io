@@ -24,7 +24,7 @@ The sitemap contains every URL called by the <em>build</em> command.</p>
 <h2>Set last modified</h2>
 <p>When registering an url in the sitemap, the build command look for a <em>Last-Modified</em> header in the <em>Response</em>, if it exists it will be used as <code>&lt;lastmod&gt;</code> tag for this entry in the sitemap.</p>
 <p>So if you want to set a last modified tag for a custom controller, just set the <em>Last-Modified</em> header in your response.</p>
-<p><strong>Tip:</strong> If your routes are <a href="feature-helpers">declared as <em>content</em> routes</a>, Phpillip automatically set that header based on last change of your content files.</p>
+<p><strong>Tip:</strong> If your routes are <a href="/feature-helpers">declared as <em>content</em> routes</a>, Phpillip automatically set that header based on last change of your content files.</p>
 <h2>Hide a route from sitemap</h2>
 <p>By default, all routes are registered in the sitemap.
 To hide a route from the sitemap, use the method <code>hideFromSitemap</code>;</p>
