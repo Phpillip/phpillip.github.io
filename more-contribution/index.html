@@ -5,11 +5,11 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-            <title>Route format | Phpillip</title>
+            <title>Contributing | Phpillip</title>
 
             <meta name="author" content="Thomas Jarrand">
             <meta name="description" content="Phpillip documentation">
-            <link rel="canonical" href="http://phpillip.github.io/controller-format">
+            <link rel="canonical" href="http://phpillip.github.io/more-contribution">
         
                     <link rel="stylesheet" href="/css/style.css">
         
@@ -20,50 +20,20 @@
 <div id="#top" class="container">
     <div class="row">
         <div class="content col-sm-9">
-                <h1>Route format</h1>
-<p>Specifiyng the format of a route will determine the extention of the output file during the build.</p>
-<p>By default, all routes are treated as <em>HTML</em> and therefor dumped as <code>.html</code> files.</p>
-<p>Phpillip rely on the <em>Response</em> <code>Content-Type</code> header to determine the format of a route.</p>
-<p>To control the output format of a route, you just need to configure the <em>Response</em> with the desired content type.</p>
-<p>There are 3 ways to do it:</p>
-<h2>Do it, litteraly:</h2>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
-<span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// Will output a &#39;.txt&#39; file</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">])</span>
-<span class="p">}</span>
-
-<span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// Will output a &#39;.json&#39; file</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">JsonResponse</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-<h2>Set the <em>_format</em> Request attribute</h2>
-<p>In Symfony, Response content type is by default determined by the format of the Request.</p>
-<p>So you can define the output format of a route by setting the <em>Request</em> attribute <code>_format</code>. And Phpillip provides you with a <code>format</code> method on the route to do just that:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
-<span class="c1">// Will output a &#39;.txt&#39; file</span>
-<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">&#39;txt&#39;</span><span class="p">);</span>
-</code></pre>
-<p><strong>Note</strong>: Remember that the <em>Response</em> expects a Mime-Type (e.g <em>text/html</em>) but the <em>Request</em> expects a format (e.g. <em>html</em>).</p>
-<p>Finally you can set the format of the route by explicitely naming the file in the url pattern:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
-<span class="c1">// Will output a &#39;.json&#39; file</span>
-<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/hello.json&#39;</span><span class="p">);</span>
-</code></pre>
-<h1>File name</h1>
-<p>Additionaly, you can choose a custom name for the output file.</p>
-<p>With the <code>setFileName</code> method:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
-<span class="c1">// Will output a &#39;404.html&#39; file</span>
-<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/404&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setFilename</span><span class="p">(</span><span class="s1">&#39;404&#39;</span><span class="p">);</span>
-</code></pre>
-<p>Or directly in url pattern:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
-<span class="c1">// Will output a &#39;feed.rss&#39; file</span>
-<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/feed.rss&#39;</span><span class="p">);</span>
-</code></pre>
-<p><strong>Note:</strong> The default output file name is <code>index</code>.</p>
+                <h1>Contributing</h1>
+<p>If you need any feature in Phpillip or encounter any bug: please <a href="https://github.com/Phpillip/phpillip/issues" target="_blank">fill up an issue</a>.</p>
+<p><strong>Whether you're a developer or not, any contribution are welcome:</strong></p>
+<ul>
+<li>Feedback</li>
+<li>Code review</li>
+<li>Test</li>
+<li>Typo</li>
+<li>Documentation</li>
+<li>Idea / suggestion</li>
+<li>Sharing / Blog post</li>
+</ul>
+<p>If you want to contribute to the source code, please fill submit a pull request in Github.</p>
+<p>Thank you guys!</p>
         </div>
         <div class="side-bar col-sm-3">
             <a id="logo" class="logo" href="/">
@@ -120,7 +90,7 @@
             </a>
         </li>
                             <li class="nav-item">
-            <a class="nav-link active" href="/controller-format">
+            <a class="nav-link " href="/controller-format">
                 Route format
             </a>
         </li>
@@ -155,7 +125,7 @@
             </a>
         </li>
                             <li class="nav-item">
-            <a class="nav-link " href="/more-contribution">
+            <a class="nav-link active" href="/more-contribution">
                 Contributing
             </a>
         </li>
