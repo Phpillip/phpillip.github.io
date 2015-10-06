@@ -90,8 +90,10 @@ Why not!</code></pre>
 <p>Write the Twig templates corresponding to your routes and controllers in <code>src/Resources/views/</code></p>
 <p>If you use the default Phpillip routes and controller, you'll need to provide:</p>
 <p>The list template:</p>
-<p><em>File:</em> <code>[my-content-type]/index.html.twig</code>
-<em>Variables:</em> An array of contents, named <code>[content-type]s</code>.</p>
+<ul>
+<li><em>File:</em> <code>[my-content-type]/index.html.twig</code>.</li>
+<li><em>Variables:</em> An array of contents, named <code>[content-type]s</code>.</li>
+</ul>
 <pre><code class="language-twig"><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">&#39;base.html.twig&#39;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">article</span> <span class="k">in</span> <span class="nv">articles</span> <span class="cp">%}</span><span class="x"></span>
@@ -102,8 +104,10 @@ Why not!</code></pre>
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
 </code></pre>
 <p>The single content page template:</p>
-<p><em>File:</em> <code>[my-content-type]/show.html.twig</code>
-<em>Variables:</em> The content as an associative array, named <code>[content-type]</code>.</p>
+<ul>
+<li><em>File:</em> <code>[my-content-type]/show.html.twig</code>.</li>
+<li><em>Variables:</em> The content as an associative array, named <code>[content-type]</code>.</li>
+</ul>
 <pre><code class="language-twig"><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">&#39;base.html.twig&#39;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">article.content</span> <span class="cp">}}</span><span class="x"></span>
@@ -131,6 +135,7 @@ Why not!</code></pre>
 <li><a href="/controller-content">Phpillip's default content controller</a></li>
 <li><a href="/controller-custom">Custom controller classes</a></li>
 <li><a href="/controller-format">Specifying output format</a></li>
+<li><a href="/controller-template">Template Resolution</a></li>
 </ul>
 <p>About the <strong>console</strong>:</p>
 <ul>
