@@ -31,7 +31,7 @@
         <div class="content col-sm-9">
                 <h1>Retrieving content</h1>
 <h2>The content repository</h2>
-<p>The content repository service is responsible for fetching you content, you'll find it in the Application under the <em>content_repository</em> key:</p>
+<p>The content repository service is responsible for fetching your content. You'll find it in the Application under the <em>content_repository</em> key:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">];</span>
 </code></pre>
@@ -82,7 +82,7 @@
 </blockquote>
 <h2>Fetching content</h2>
 <h3>Get a single content</h3>
-<p>The <code>getContent</code> method expect a content type and a content name and return a single content:</p>
+<p>The <code>getContent</code> method expects a content type and a content name. It returns a single content:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="c1">// Get a content matching `my-content.*` contents in &#39;src/Resources/data/foo&#39;:</span>
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContent</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;my-content&#39;</span><span class="p">);</span>

@@ -31,22 +31,22 @@
         <div class="content col-sm-9">
                 <h1>Route Helpers</h1>
 <p>Phpillip's Route extends Silex's Route and provide an extra set of helpers.</p>
-<p>These helpers are designed to save you time by addressing common controller needs automatically: parameters to content conversion, pagination, template resolution, ...</p>
+<p>These helpers are designed to save you time by addressing common controller needs automatically: parameters to content conversion, pagination, template resolution...</p>
 <h2>Content issues</h2>
-<p>When building a route that depends on the content (e.g. <code>/blog/{article}</code>), Phpillip will need to call the route for each article content you have: <em>blog/my-first-post</em>, <em>blog/my-second-post</em>, ect.</p>
+<p>When building a route that depends on the content (e.g. <code>/blog/{article}</code>), Phpillip will need to call the route for each article content you have: <em>blog/my-first-post</em>, <em>blog/my-second-post</em>...</p>
 <p>That's why Phpillip provides helpers to <em>link</em> your routes to your contents.</p>
 <h3>Single content</h3>
-<p>To tell Phpillip that your route vary over content, use the <code>content</code> methode on the route:</p>
+<p>To tell Phpillip that your route vary over content, use the <code>content</code> method on the route:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="c1">// For an &#39;article&#39; content type:</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/{article}&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">);</span>
 </code></pre>
 <p>In this example, Phpillip will call the route for each article file found in <code>src/Resources/data/article</code>.</p>
-<p>The <em>content</em> helper also act as a param converter.</p>
+<p>The <em>content</em> helper also acts as a param converter.</p>
 <p>When a <em>Request</em> hits a route that is declared as having a content, Phpillip will try to fetch the content for you.</p>
 <p>In our previous example, calling the url <code>/blog/my-first-post</code> will match our route and Phpillip will look for a file named <code>src/Resources/data/article/my-first-post.*</code>.</p>
 <p>If such file exists, Phpillip will parse it as an associative array and set it as an <code>article</code> attribute in the <em>Request</em>.</p>
-<p>You can of course get the automatically fetched content in your controller:</p>
+<p>Of course, you can get the automatically fetched content in your controller:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="c1">// As a parameter:</span>
 <span class="k">function</span> <span class="p">(</span><span class="k">array</span> <span class="nv">$article</span><span class="p">)</span> <span class="p">{</span>
@@ -64,8 +64,8 @@
 <span class="c1">// For an &#39;article&#39; content type:</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">contents</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">);</span>
 </code></pre>
-<p>This only act as a parameter converter.</p>
-<p>When a <em>Request</em> hits a route that is declared as being a <em>list</em>, in our example <code>/blog</code>,  Phpillip will look for all files in <code>src/Resources/data/article</code>. Then it will parse each file as an associative array, store the results in an array and set it as an <code>articles</code> attribute in the <em>Request</em>.</p>
+<p>This only acts as a parameter converter.</p>
+<p>When a <em>Request</em> hits a route that is declared as being a <em>list</em> −in our example <code>/blog</code>− Phpillip will look for all files in <code>src/Resources/data/article</code>. Then it will parse each file as an associative array, store the results in an array and set it as an <code>articles</code> attribute in the <em>Request</em>.</p>
 <p>To get the automatically fetched contents in your controller:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="c1">// As a parameter:</span>
@@ -80,7 +80,7 @@
 </code></pre>
 <p>By default, the contents are indexed numerically in the array and in the same order as they appear in the file system.</p>
 <p>You can define custom index and sorting in the <code>contents</code> method:
-The <em>index</em> (strin) is a key available in the content.
+The <em>index</em> (string) is a key available in the content.
 The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false</code> for descending.</p>
 <p>To fetch every articles, indexed by <em>date</em> and most recent first (descending):</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
@@ -90,16 +90,16 @@ The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false<
 <blockquote>
 <p>You need your contents paginated? The method <code>paginate</code> works just like the method <code>contents</code> but paginate your contents.</p>
 </blockquote>
-<p>To tell Phpillip that your route is a <em>paginated list</em> of contents, use the <code>contents</code> methode on the route:</p>
+<p>To tell Phpillip that your route is a <em>paginated list</em> of contents, use the <code>contents</code> method on the route:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="c1">// For an &#39;article&#39; content type:</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">paginate</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">);</span>
 </code></pre>
 <p>The paginate helper adds a <code>page</code> optional parameter to the route so that it can handle the following urls: <code>/blog</code> and <code>/blog/{page}</code>.</p>
-<p>When building a route that paginates content, Phpillip will need to call the route for each page, depnending on how much content you have: <em>blog</em>, <em>blog/2</em>, <em>blog/3</em>, ect.</p>
-<p><strong>Note:</strong> the page parameters is ommited on the first page.</p>
-<p>The <em>paginate</em> helper than acts as a param converter.</p>
-<p>When a <em>Request</em> hits a route that is declared as being a <em>paginated list</em>, in our example <code>/blog/2</code>,  Phpillip will count files in <code>src/Resources/data/article</code> and parse the subset corresponding to the requested page.</p>
+<p>When building a route that paginates content, Phpillip will need to call the route for each page, depending on how much content you have: <em>blog</em>, <em>blog/2</em>, <em>blog/3</em>...</p>
+<p><strong>Note:</strong> the page parameters is ommitted on the first page.</p>
+<p>The <em>paginate</em> helper then acts as a param converter.</p>
+<p>When a <em>Request</em> hits a route that is declared as being a <em>paginated list</em> −in our example <code>/blog/2</code>− Phpillip will count files in <code>src/Resources/data/article</code> and parse the subset corresponding to the requested page.</p>
 <p>The <em>paginate</em> helper defines 3 attributes in the <em>Request</em>:</p>
 <table>
 <thead>

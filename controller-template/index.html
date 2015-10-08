@@ -30,8 +30,8 @@
     <div class="row">
         <div class="content col-sm-9">
                 <h1>Template resolution</h1>
-<p>Phpillip provide the same type of template resolution that you get in Symfony.
-When a Controller don't return a <em>Response</em>, Phpillip will try to create one by finding and rendering a matching template.</p>
+<p>Phpillip provides the same type of template resolution that you get in Symfony.
+When a Controller doesn't return a <em>Response</em>, Phpillip will try to create one by finding and rendering a matching template.</p>
 <h2>For content routes</h2>
 <p>If a route is declared as having a <em>content</em>, Phpillip will look for the  template: <code>[content_type]/[show|list].[format].twig</code></p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
@@ -55,7 +55,7 @@ When a Controller don't return a <em>Response</em>, Phpillip will try to create 
 </code></pre>
 <p>Phpillip will look for the template <code>[ControllerName]/[actionName].[format].twig</code> (just like Symfony does).</p>
 <p>In our example: <code>src/Resources/views/Blog/index.html.twig</code></p>
-<p><strong>Note:</strong> Phpillip look for a twig template matching the format of your route.</p>
+<p><strong>Note:</strong> Phpillip looks for a twig template matching the format of your route.</p>
         </div>
         <div class="side-bar col-sm-3">
             <a id="logo" class="logo" href="/">

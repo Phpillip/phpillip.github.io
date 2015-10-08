@@ -30,36 +30,36 @@
     <div class="row">
         <div class="content col-sm-9">
                 <h1>Content Controller</h1>
-<p>Phpillip provides a default <code>ContentController</code> that support 3 actions:</p>
+<p>Phpillip provides a default <code>ContentController</code> that supports 3 actions:</p>
 <ul>
 <li><strong>show:</strong> Display a single content (suited for <a href="single-content">single content</a>)</li>
 <li><strong>list:</strong> Display a full list of content (suited for <a href="/content-helpers">content list</a>)</li>
 <li><strong>page:</strong> Display one page of a paginated content list (suited for <a href="/content-helpers">pagination</a>)</li>
 </ul>
 <h2>Show</h2>
-<p>To register a controller that display a single <em>achievement</em>:</p>
+<p>To register a controller that displays a single <em>achievement</em>:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="nv">$this</span>
     <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/achievements/{achievement}&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;achievement&#39;</span><span class="p">);</span>
 </code></pre>
-<p>The expected template <code>achievement/show.html.twig</code> would receives the variable <code>achievement</code>.</p>
+<p>The expected template <code>achievement/show.html.twig</code> would receive the variable <code>achievement</code>.</p>
 <h2>List</h2>
-<p>To register a controller that display all <em>achievements</em>:</p>
+<p>To register a controller that displays all <em>achievements</em>:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
     <span class="nv">$this</span>
         <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/achievements&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:list&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">contents</span><span class="p">(</span><span class="s1">&#39;achievement&#39;</span><span class="p">);</span>
 </code></pre>
-<p>The expected template <code>achievement/list.html.twig</code> would receives the variable <code>achievements</code>.</p>
+<p>The expected template <code>achievement/list.html.twig</code> would receive the variable <code>achievements</code>.</p>
 <h2>Paginate</h2>
-<p>To register a controller that paginate <em>achievements</em>:</p>
+<p>To register a controller that paginates <em>achievements</em>:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
     <span class="nv">$this</span>
         <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/achievements&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:page&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">paginate</span><span class="p">(</span><span class="s1">&#39;achievement&#39;</span><span class="p">);</span>
 </code></pre>
-<p>The expected template <code>achievement/page.html.twig</code> would receives the following variables:</p>
+<p>The expected template <code>achievement/page.html.twig</code> would receive the following variables:</p>
 <ul>
 <li><code>achievements</code>: Achievements for the current page</li>
 <li><code>page</code>: Index of the current page</li>

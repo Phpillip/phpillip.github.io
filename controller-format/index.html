@@ -31,15 +31,15 @@
         <div class="content col-sm-9">
                 <h1>Route format</h1>
 <p>Specifiyng the format of a route will determine the extention of the output file during the build.</p>
-<p>By default, all routes are treated as <em>HTML</em> and therefor dumped as <code>.html</code> files.</p>
+<p>By default, all routes are treated as <em>HTML</em> and therefore dumped as <code>.html</code> files.</p>
 <p>Phpillip rely on the <em>Response</em> <code>Content-Type</code> header to determine the format of a route.</p>
 <p>To control the output format of a route, you just need to configure the <em>Response</em> with the desired content type.</p>
 <p>There are 3 ways to do it:</p>
-<h2>Do it, litteraly:</h2>
+<h2>Do it, literally:</h2>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">// Will output a &#39;.txt&#39; file</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">]);</span>
 <span class="p">}</span>
 
 <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -47,15 +47,15 @@
     <span class="k">return</span> <span class="k">new</span> <span class="nx">JsonResponse</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<h2>Set the <em>_format</em> Request attribute</h2>
-<p>In Symfony, Response content type is by default determined by the format of the Request.</p>
-<p>So you can define the output format of a route by setting the <em>Request</em> attribute <code>_format</code>. And Phpillip provides you with a <code>format</code> method on the route to do just that:</p>
+<h2>Set the <em>_format</em> attribute of the <em>Request</em></h2>
+<p>In Symfony, <em>Response</em> content type is by default determined by the format of the <em>Request</em>.</p>
+<p>So you can define the output format of a route by setting the <em>Request</em> attribute <code>_format</code>. Phpillip will provide you with a <code>format</code> method on the route to do just that:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="c1">// Will output a &#39;.txt&#39; file</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">&#39;txt&#39;</span><span class="p">);</span>
 </code></pre>
 <p><strong>Note</strong>: Remember that the <em>Response</em> expects a Mime-Type (e.g <em>text/html</em>) but the <em>Request</em> expects a format (e.g. <em>html</em>).</p>
-<p>Finally you can set the format of the route by explicitely naming the file in the url pattern:</p>
+<p>Finally you can set the format of the route by explicitly naming the file in the url pattern:</p>
 <pre><code class="language-php"><span class="cp">&lt;?php</span> 
 <span class="c1">// Will output a &#39;.json&#39; file</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/hello.json&#39;</span><span class="p">);</span>
