@@ -67,8 +67,8 @@
 </ol>
 <h3>1. Bootstrap</h3>
 <p>To bootstrap a new <a href="https://github.com/Phpillip/phpillip" target="_blank">Phpillip</a> project:</p>
-<pre><code class="language-bash">composer create-project phpillip/phpillip-standard my_app
-<span class="nb">cd </span>my_app
+<pre><code class="language-bash"><span></span>composer create-project phpillip/phpillip-standard my_app
+<span class="nb">cd</span> my_app
 </code></pre>
 <h3>2. Write content</h3>
 <p>Write your content file <code>[my-content-slug].[format]</code> in <code>src/Resources/data/[my-content-type]/</code>:</p>
@@ -83,15 +83,15 @@ Why not!</code></pre>
 <h3>3. Declare routes and controllers</h3>
 <p>Phpillip is a Silex application, so you can declare a route and its controller <a href="http://silex.sensiolabs.org/doc/usage.html#routing" target="_blank">the same way you would in Silex</a>:</p>
 <p>A closure:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[];</span> <span class="p">})</span><span class="o">-&gt;</span><span class="na">template</span><span class="p">(</span><span class="s1">&#39;index.html.twig&#39;</span><span class="p">);</span>
 </code></pre>
 <p>Your own controller class in 'src/Controller':</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="s1">&#39;Controller\\BlogController::index&#39;</span><span class="p">);</span>
 </code></pre>
 <p>A controller service (here the Phpillip content controller service):</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/{post}&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">);</span>
 </code></pre>
 <p>Phpillip gives you <a href="/feature-helpers">many helpers</a> to automate content loading for your routes.</p>
@@ -103,7 +103,7 @@ Why not!</code></pre>
 <li><em>File:</em> <code>[my-content-type]/index.html.twig</code>.</li>
 <li><em>Variables:</em> An array of contents, named <code>[content-type]s</code>.</li>
 </ul>
-<pre><code class="language-twig"><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">&#39;base.html.twig&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<pre><code class="language-twig"><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">&#39;base.html.twig&#39;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">article</span> <span class="k">in</span> <span class="nv">articles</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">        &lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">path</span><span class="o">(</span><span class="s1">&#39;article&#39;</span><span class="o">,</span> <span class="o">{</span><span class="nv">article</span><span class="o">:</span> <span class="nv">article.slug</span><span class="o">})</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
@@ -117,7 +117,7 @@ Why not!</code></pre>
 <li><em>File:</em> <code>[my-content-type]/show.html.twig</code>.</li>
 <li><em>Variables:</em> The content as an associative array, named <code>[content-type]</code>.</li>
 </ul>
-<pre><code class="language-twig"><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">&#39;base.html.twig&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<pre><code class="language-twig"><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">&#39;base.html.twig&#39;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">article.content</span> <span class="cp">}}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>

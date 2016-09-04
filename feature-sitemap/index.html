@@ -39,13 +39,13 @@ The sitemap contains every URL called by the <em>build</em> command.</p>
 <h2>Hide a route from sitemap</h2>
 <p>By default, all routes are registered in the sitemap.
 To hide a route from the sitemap, use the method <code>hideFromSitemap</code>;</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;blog/feed.rss&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">hideFromSitemap</span><span class="p">();</span>
 </code></pre>
 <h2>Disable Sitemap</h2>
 <p>To disable the <em>sitemap</em> feature completely, set it to <code>false</code> in the configuration:</p>
-<pre><code class="language-yaml"><span class="c1"># src/Resources/config/config.yml</span>
-<span class="l-Scalar-Plain">sitemap</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<pre><code class="language-yaml"><span></span><span class="c1"># src/Resources/config/config.yml</span>
+<span class="l l-Scalar l-Scalar-Plain">sitemap</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre>
         </div>
         <div class="side-bar col-sm-3">

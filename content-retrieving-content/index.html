@@ -32,7 +32,7 @@
                 <h1>Retrieving content</h1>
 <h2>The content repository</h2>
 <p>The content repository service is responsible for fetching your content. You'll find it in the Application under the <em>content_repository</em> key:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">];</span>
 </code></pre>
 <p>When parsing a content, the repository returns an associative array with the following keys:</p>
@@ -83,7 +83,7 @@
 <h2>Fetching content</h2>
 <h3>Get a single content</h3>
 <p>The <code>getContent</code> method expects a content type and a content name. It returns a single content:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// Get a content matching `my-content.*` contents in &#39;src/Resources/data/foo&#39;:</span>
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContent</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;my-content&#39;</span><span class="p">);</span>
 
@@ -96,7 +96,7 @@
 </code></pre>
 <h3>Get all contents</h3>
 <p>The <code>getContents</code> method expect a content type and return all its contents:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// Get all contents in &#39;src/Resources/data/foo&#39;:</span>
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
 
@@ -110,7 +110,7 @@
 <p>In a list, the contents are indexed by default by their source file name (a.k.a <em>slug</em>).</p>
 <h3>Indexing and ordering contents</h3>
 <p>Say you have a <code>post</code> content that contains a <code>date</code> property, you can get all the <em>posts</em> indexed by date:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// Get all contents in &#39;src/Resources/data/post&#39; indexed by &#39;date&#39;:</span>
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">);</span>
 
@@ -122,7 +122,7 @@
 <span class="p">]</span>
 </code></pre>
 <p>A third parameter is provided to sort the resulting array:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// Get older post first (&#39;date&#39; ascending):</span>
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 

@@ -37,7 +37,7 @@
 <p>That's why Phpillip provides helpers to <em>link</em> your routes to your contents.</p>
 <h3>Single content</h3>
 <p>To tell Phpillip that your route vary over content, use the <code>content</code> method on the route:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// For an &#39;article&#39; content type:</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/{article}&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">);</span>
 </code></pre>
@@ -47,7 +47,7 @@
 <p>In our previous example, calling the url <code>/blog/my-first-post</code> will match our route and Phpillip will look for a file named <code>src/Resources/data/article/my-first-post.*</code>.</p>
 <p>If such file exists, Phpillip will parse it as an associative array and set it as an <code>article</code> attribute in the <em>Request</em>.</p>
 <p>Of course, you can get the automatically fetched content in your controller:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// As a parameter:</span>
 <span class="k">function</span> <span class="p">(</span><span class="k">array</span> <span class="nv">$article</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Your content is $article</span>
@@ -60,14 +60,14 @@
 </code></pre>
 <h3>Content list</h3>
 <p>To tell Phpillip that your route is a <em>list</em> of contents, use the <code>contents</code> methode on the route:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// For an &#39;article&#39; content type:</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">contents</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">);</span>
 </code></pre>
 <p>This only acts as a parameter converter.</p>
 <p>When a <em>Request</em> hits a route that is declared as being a <em>list</em> −in our example <code>/blog</code>− Phpillip will look for all files in <code>src/Resources/data/article</code>. Then it will parse each file as an associative array, store the results in an array and set it as an <code>articles</code> attribute in the <em>Request</em>.</p>
 <p>To get the automatically fetched contents in your controller:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// As a parameter:</span>
 <span class="k">function</span> <span class="p">(</span><span class="k">array</span> <span class="nv">$articles</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Your articles are in $articles</span>
@@ -83,7 +83,7 @@
 The <em>index</em> (string) is a key available in the content.
 The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false</code> for descending.</p>
 <p>To fetch every articles, indexed by <em>date</em> and most recent first (descending):</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">contents</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
 </code></pre>
 <h3>Pagination</h3>
@@ -91,7 +91,7 @@ The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false<
 <p>You need your contents paginated? The method <code>paginate</code> works just like the method <code>contents</code> but paginate your contents.</p>
 </blockquote>
 <p>To tell Phpillip that your route is a <em>paginated list</em> of contents, use the <code>contents</code> method on the route:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// For an &#39;article&#39; content type:</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">paginate</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">);</span>
 </code></pre>
@@ -128,7 +128,7 @@ The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false<
 </tbody>
 </table>
 <p>Request attributes are available in the controller as always:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// As parameters:</span>
 <span class="k">function</span> <span class="p">(</span><span class="k">array</span> <span class="nv">$articles</span><span class="p">,</span> <span class="nx">Paginator</span> <span class="nv">$paginator</span><span class="p">,</span> <span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// $articles contains only articles of the curent page</span>
@@ -143,7 +143,7 @@ The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false<
 </code></pre>
 <h2>Hide a route</h2>
 <p>To hide a route from the build, use the <code>hide</code> method.</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span>
     <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;_latest-posts&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>

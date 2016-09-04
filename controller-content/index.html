@@ -38,7 +38,7 @@
 </ul>
 <h2>Show</h2>
 <p>To register a controller that displays a single <em>achievement</em>:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$this</span>
     <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/achievements/{achievement}&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;achievement&#39;</span><span class="p">);</span>
@@ -46,7 +46,7 @@
 <p>The expected template <code>achievement/show.html.twig</code> would receive the variable <code>achievement</code>.</p>
 <h2>List</h2>
 <p>To register a controller that displays all <em>achievements</em>:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
     <span class="nv">$this</span>
         <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/achievements&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:list&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">contents</span><span class="p">(</span><span class="s1">&#39;achievement&#39;</span><span class="p">);</span>
@@ -54,7 +54,7 @@
 <p>The expected template <code>achievement/list.html.twig</code> would receive the variable <code>achievements</code>.</p>
 <h2>Paginate</h2>
 <p>To register a controller that paginates <em>achievements</em>:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
     <span class="nv">$this</span>
         <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/achievements&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:page&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">paginate</span><span class="p">(</span><span class="s1">&#39;achievement&#39;</span><span class="p">);</span>

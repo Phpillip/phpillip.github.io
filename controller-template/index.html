@@ -34,13 +34,13 @@
 When a Controller doesn't return a <em>Response</em>, Phpillip will try to create one by finding and rendering a matching template.</p>
 <h2>For content routes</h2>
 <p>If a route is declared as having a <em>content</em>, Phpillip will look for the  template: <code>[content_type]/[show|list].[format].twig</code></p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// For single content:</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/{post}&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">);</span>
 
 <span class="c1">// The template: &#39;src/Resources/views/post/show.html.twig&#39;</span>
 </code></pre>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// For several contents:</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">paginate</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">);</span>
 <span class="c1">// or</span>
@@ -50,7 +50,7 @@ When a Controller doesn't return a <em>Response</em>, Phpillip will try to creat
 </code></pre>
 <h2>For Class controllers</h2>
 <p>If you declare you controller as a Class Controller:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="s1">&#39;Acme\Controller\BlogController::index&#39;</span><span class="p">);</span>
 </code></pre>
 <p>Phpillip will look for the template <code>[ControllerName]/[actionName].[format].twig</code> (just like Symfony does).</p>

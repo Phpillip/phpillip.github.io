@@ -35,7 +35,7 @@
 <p>And you're able to add your own to fit your needs!</p>
 <h2>Create a custom property handler</h2>
 <p><em>Create a class</em> that implements the <code>Phpillip\Behavior\PropertyHandlerInterface</code>:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span>
+<pre><code class="language-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">PropertyHandler</span><span class="p">;</span>
 
@@ -81,9 +81,10 @@
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSomethingWith</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</pre></div>
 </code></pre>
 <p><em>Register your property handler</em> in the Content Repository:</p>
-<pre><code class="language-php"><span class="cp">&lt;?php</span> 
+<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">addPropertyHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyPropertyHandler</span><span class="p">());</span>
 </code></pre>
 <p>In this example, the <strong>handle</strong> method will be called on every _my<em>property</em> property when the content data <em>isSupported</em>.</p>
