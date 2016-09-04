@@ -29,16 +29,16 @@
 <div id="#top" class="container">
     <div class="row">
         <div class="content col-sm-9">
-                <h1><img src="http://phpillip.github.io/phpillip.svg" alt="" target="_blank" /></h1>
+                <h1 id="-http-phpillip-github-io-phpillip-svg-"><img src="http://phpillip.github.io/phpillip.svg" alt="" target="_blank" /></h1>
 <blockquote>
 <p>Phpillip is <a href="https://gohugo.io/" target="_blank">Hugo</a>'s cousin.</p>
 </blockquote>
-<h2>What</h2>
+<h2 id="what">What</h2>
 <p>Phpillip is static website generator written in PHP and powered by <a href="http://silex.sensiolabs.org/" target="_blank">Silex</a> and <a href="http://symfony.com/doc/current/components/index.html" target="_blank">Symfony components</a>.</p>
 <p>It basically dumps your Silex application to static HTML files in a <code>/dist</code> folder.</p>
 <p>The result directory is meant to be served by an HTTP Server like <a href="http://apache.org" target="_blank">apache</a> and <a href="http://www.nginx.com" target="_blank">nginx</a> or published to static website services like <a href="https://pages.github.com/" target="_blank">Github Pages</a>.</p>
 <p><em>It's particularly fit for <strong>blogging</strong>, <strong>documentation</strong> and <strong>showcase</strong>.</em></p>
-<h2>How</h2>
+<h2 id="how">How</h2>
 <p>Phpillip is a <a href="http://silex.sensiolabs.org/" target="_blank">Silex</a> application.</p>
 <p>The <strong>build process</strong>:</p>
 <ul>
@@ -49,14 +49,14 @@
 </ul>
 <p>It supports as many format as you need.</p>
 <p>It uses the powerful <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> engine for templating.</p>
-<h2>Why</h2>
+<h2 id="why">Why</h2>
 <p>Phpillip is meant to be:</p>
 <ul>
 <li>Highly <strong>extensible</strong></li>
 <li>Friendly with <strong>Symfony</strong> developers</li>
 <li>Clear, simple and clean</li>
 </ul>
-<h2>Getting started</h2>
+<h2 id="getting-started">Getting started</h2>
 <p>Get your static website:</p>
 <ol>
 <li>Bootstrap a Phpillip project</li>
@@ -65,12 +65,12 @@
 <li>Provide templates</li>
 <li>Build the static website</li>
 </ol>
-<h3>1. Bootstrap</h3>
+<h3 id="-bootstrap">1. Bootstrap</h3>
 <p>To bootstrap a new <a href="https://github.com/Phpillip/phpillip" target="_blank">Phpillip</a> project:</p>
 <pre><code class="language-bash"><span></span>composer create-project phpillip/phpillip-standard my_app
 <span class="nb">cd</span> my_app
 </code></pre>
-<h3>2. Write content</h3>
+<h3 id="-write-content">2. Write content</h3>
 <p>Write your content file <code>[my-content-slug].[format]</code> in <code>src/Resources/data/[my-content-type]/</code>:</p>
 <p><strong>Example</strong> <code>src/Resources/data/article/why-use-phpillip.md</code>:</p>
 <pre><code>---
@@ -80,7 +80,7 @@ title: Why use Phpillip?
 # Why use Phpillip
 
 Why not!</code></pre>
-<h3>3. Declare routes and controllers</h3>
+<h3 id="-declare-routes-and-controllers">3. Declare routes and controllers</h3>
 <p>Phpillip is a Silex application, so you can declare a route and its controller <a href="http://silex.sensiolabs.org/doc/usage.html#routing" target="_blank">the same way you would in Silex</a>:</p>
 <p>A closure:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
@@ -95,7 +95,7 @@ Why not!</code></pre>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/{post}&#39;</span><span class="p">,</span> <span class="s1">&#39;content.controller:show&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">);</span>
 </code></pre>
 <p>Phpillip gives you <a href="/feature-helpers">many helpers</a> to automate content loading for your routes.</p>
-<h3>4. Provide templates</h3>
+<h3 id="-provide-templates">4. Provide templates</h3>
 <p>Write the Twig templates corresponding to your routes and controllers in <code>src/Resources/views/</code></p>
 <p>If you use the default Phpillip routes and controller, you'll need to provide:</p>
 <p>The list template:</p>
@@ -122,12 +122,12 @@ Why not!</code></pre>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">article.content</span> <span class="cp">}}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
 </code></pre>
-<h3>5. Build</h3>
+<h3 id="-build">5. Build</h3>
 <p>Build the static files to <code>/dist</code> with the Phpillip build command:</p>
 <pre><code>bin/console phpillip:build</code></pre>
 <p><img src="http://phpillip.github.io/build.gif" alt="" target="_blank" /></p>
 <p>You're done!</p>
-<h2>Going further:</h2>
+<h2 id="going-further-">Going further:</h2>
 <p>About Phpillip's <strong>features</strong>:</p>
 <ul>
 <li><a href="/feature-helpers">Helpers: Param Converters and other route shortcuts</a></li>
@@ -151,9 +151,9 @@ Why not!</code></pre>
 <ul>
 <li><a href="/console-commands">Phpillip's Console</a></li>
 </ul>
-<h2>Contribution</h2>
+<h2 id="contribution">Contribution</h2>
 <p>Any kind of <a href="/more-contribution">contribution</a> is very welcome!</p>
-<h2>Directory structure</h2>
+<h2 id="directory-structure">Directory structure</h2>
 <pre><code># Sources directory
 src/
     # Your Silex Application in which your declare routes, services, ...
@@ -276,6 +276,11 @@ dist/
                             <li class="nav-item">
             <a class="nav-link " href="/feature-sitemap">
                 Sitemap
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-twig">
+                Twig utils
             </a>
         </li>
     </ul>

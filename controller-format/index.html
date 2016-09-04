@@ -29,13 +29,13 @@
 <div id="#top" class="container">
     <div class="row">
         <div class="content col-sm-9">
-                <h1>Route format</h1>
+                <h1 id="route-format">Route format</h1>
 <p>Specifiyng the format of a route will determine the extention of the output file during the build.</p>
 <p>By default, all routes are treated as <em>HTML</em> and therefore dumped as <code>.html</code> files.</p>
 <p>Phpillip rely on the <em>Response</em> <code>Content-Type</code> header to determine the format of a route.</p>
 <p>To control the output format of a route, you just need to configure the <em>Response</em> with the desired content type.</p>
 <p>There are 3 ways to do it:</p>
-<h2>Do it, literally:</h2>
+<h2 id="do-it-literally-">Do it, literally:</h2>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">// Will output a &#39;.txt&#39; file</span>
@@ -47,7 +47,7 @@
     <span class="k">return</span> <span class="k">new</span> <span class="nx">JsonResponse</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<h2>Set the <em>_format</em> attribute of the <em>Request</em></h2>
+<h2 id="set-the-format-attribute-of-the-request-">Set the <em>_format</em> attribute of the <em>Request</em></h2>
 <p>In Symfony, <em>Response</em> content type is by default determined by the format of the <em>Request</em>.</p>
 <p>So you can define the output format of a route by setting the <em>Request</em> attribute <code>_format</code>. Phpillip will provide you with a <code>format</code> method on the route to do just that:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
@@ -60,7 +60,7 @@
 <span class="c1">// Will output a &#39;.json&#39; file</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/hello.json&#39;</span><span class="p">);</span>
 </code></pre>
-<h1>File name</h1>
+<h1 id="file-name">File name</h1>
 <p>Additionaly, you can choose a custom name for the output file.</p>
 <p>With the <code>setFileName</code> method:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
@@ -151,6 +151,11 @@
                             <li class="nav-item">
             <a class="nav-link " href="/feature-sitemap">
                 Sitemap
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-twig">
+                Twig utils
             </a>
         </li>
     </ul>

@@ -29,8 +29,8 @@
 <div id="#top" class="container">
     <div class="row">
         <div class="content col-sm-9">
-                <h1>Retrieving content</h1>
-<h2>The content repository</h2>
+                <h1 id="retrieving-content">Retrieving content</h1>
+<h2 id="the-content-repository">The content repository</h2>
 <p>The content repository service is responsible for fetching your content. You'll find it in the Application under the <em>content_repository</em> key:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_repository&#39;</span><span class="p">];</span>
@@ -80,8 +80,8 @@
 <blockquote>
 <p>Need more/differents properties? You can <a href="../content/property-handlers">add your own</a></p>
 </blockquote>
-<h2>Fetching content</h2>
-<h3>Get a single content</h3>
+<h2 id="fetching-content">Fetching content</h2>
+<h3 id="get-a-single-content">Get a single content</h3>
 <p>The <code>getContent</code> method expects a content type and a content name. It returns a single content:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// Get a content matching `my-content.*` contents in &#39;src/Resources/data/foo&#39;:</span>
@@ -94,7 +94,7 @@
     <span class="c1">// ... Any other key present in the source file</span>
 <span class="p">]</span>
 </code></pre>
-<h3>Get all contents</h3>
+<h3 id="get-all-contents">Get all contents</h3>
 <p>The <code>getContents</code> method expect a content type and return all its contents:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// Get all contents in &#39;src/Resources/data/foo&#39;:</span>
@@ -108,7 +108,7 @@
 <span class="p">]</span>
 </code></pre>
 <p>In a list, the contents are indexed by default by their source file name (a.k.a <em>slug</em>).</p>
-<h3>Indexing and ordering contents</h3>
+<h3 id="indexing-and-ordering-contents">Indexing and ordering contents</h3>
 <p>Say you have a <code>post</code> content that contains a <code>date</code> property, you can get all the <em>posts</em> indexed by date:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// Get all contents in &#39;src/Resources/data/post&#39; indexed by &#39;date&#39;:</span>
@@ -207,6 +207,11 @@
                             <li class="nav-item">
             <a class="nav-link " href="/feature-sitemap">
                 Sitemap
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-twig">
+                Twig utils
             </a>
         </li>
     </ul>

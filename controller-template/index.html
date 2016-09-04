@@ -29,10 +29,10 @@
 <div id="#top" class="container">
     <div class="row">
         <div class="content col-sm-9">
-                <h1>Template resolution</h1>
+                <h1 id="template-resolution">Template resolution</h1>
 <p>Phpillip provides the same type of template resolution that you get in Symfony.
 When a Controller doesn't return a <em>Response</em>, Phpillip will try to create one by finding and rendering a matching template.</p>
-<h2>For content routes</h2>
+<h2 id="for-content-routes">For content routes</h2>
 <p>If a route is declared as having a <em>content</em>, Phpillip will look for the  template: <code>[content_type]/[show|list].[format].twig</code></p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// For single content:</span>
@@ -48,7 +48,7 @@ When a Controller doesn't return a <em>Response</em>, Phpillip will try to creat
 
 <span class="c1">// The template: &#39;src/Resources/views/post/list.html.twig&#39;</span>
 </code></pre>
-<h2>For Class controllers</h2>
+<h2 id="for-class-controllers">For Class controllers</h2>
 <p>If you declare you controller as a Class Controller:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="s1">&#39;Acme\Controller\BlogController::index&#39;</span><span class="p">);</span>
@@ -134,6 +134,11 @@ When a Controller doesn't return a <em>Response</em>, Phpillip will try to creat
                             <li class="nav-item">
             <a class="nav-link " href="/feature-sitemap">
                 Sitemap
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-twig">
+                Twig utils
             </a>
         </li>
     </ul>

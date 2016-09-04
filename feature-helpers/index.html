@@ -29,13 +29,13 @@
 <div id="#top" class="container">
     <div class="row">
         <div class="content col-sm-9">
-                <h1>Route Helpers</h1>
+                <h1 id="route-helpers">Route Helpers</h1>
 <p>Phpillip's Route extends Silex's Route and provide an extra set of helpers.</p>
 <p>These helpers are designed to save you time by addressing common controller needs automatically: parameters to content conversion, pagination, template resolution...</p>
-<h2>Content issues</h2>
+<h2 id="content-issues">Content issues</h2>
 <p>When building a route that depends on the content (e.g. <code>/blog/{article}</code>), Phpillip will need to call the route for each article content you have: <em>blog/my-first-post</em>, <em>blog/my-second-post</em>...</p>
 <p>That's why Phpillip provides helpers to <em>link</em> your routes to your contents.</p>
-<h3>Single content</h3>
+<h3 id="single-content">Single content</h3>
 <p>To tell Phpillip that your route vary over content, use the <code>content</code> method on the route:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// For an &#39;article&#39; content type:</span>
@@ -58,7 +58,7 @@
     <span class="nv">$article</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">attributes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<h3>Content list</h3>
+<h3 id="content-list">Content list</h3>
 <p>To tell Phpillip that your route is a <em>list</em> of contents, use the <code>contents</code> methode on the route:</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="c1">// For an &#39;article&#39; content type:</span>
@@ -86,7 +86,7 @@ The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false<
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">contents</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
 </code></pre>
-<h3>Pagination</h3>
+<h3 id="pagination">Pagination</h3>
 <blockquote>
 <p>You need your contents paginated? The method <code>paginate</code> works just like the method <code>contents</code> but paginate your contents.</p>
 </blockquote>
@@ -141,7 +141,7 @@ The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false<
     <span class="nv">$page</span>      <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">attributes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;page&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<h2>Hide a route</h2>
+<h2 id="hide-a-route">Hide a route</h2>
 <p>To hide a route from the build, use the <code>hide</code> method.</p>
 <pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
 <span class="nv">$app</span>
@@ -152,10 +152,10 @@ The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false<
 </code></pre>
 <p>This can be useful for a route that is meant to be rendered as a part of other routes, but should not generate a static file on its own.</p>
 <p>Like a Twig render: <code>{{ render(url('latest_posts')) }}</code></p>
-<h2>Route format</h2>
+<h2 id="route-format">Route format</h2>
 <p>Route format is treated in its <a href="/controller-format">dedicated documentation</a>.</p>
-<h2>Template</h2>
-<p>Tempalte resolution is treated in its <a href="/controller-templates">dedicated documentation</a>.</p>
+<h2 id="template">Template</h2>
+<p>Template resolution is treated in its <a href="/controller-template">dedicated documentation</a>.</p>
         </div>
         <div class="side-bar col-sm-3">
             <a id="logo" class="logo" href="/">
@@ -234,6 +234,11 @@ The <em>order</em> (boolean) is <code>true</code> for ascending and <code>false<
                             <li class="nav-item">
             <a class="nav-link " href="/feature-sitemap">
                 Sitemap
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-twig">
+                Twig utils
             </a>
         </li>
     </ul>

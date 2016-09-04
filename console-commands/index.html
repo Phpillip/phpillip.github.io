@@ -29,12 +29,12 @@
 <div id="#top" class="container">
     <div class="row">
         <div class="content col-sm-9">
-                <h1>Phpillip's console</h1>
+                <h1 id="phpillip-s-console">Phpillip's console</h1>
 <blockquote>
 <p>Phpillip uses Symfony console. So, in order to get the full list of available commands, just call <code>bin/console</code>.</p>
 </blockquote>
 <p>Phpillip provides 3 commands:</p>
-<h2>Build</h2>
+<h2 id="build">Build</h2>
 <p>Build the static files to <code>/dist</code>:</p>
 <p><strong>Usage:</strong></p>
 <pre><code>phpillip:build [options] [--] [&lt;host&gt;] [&lt;destination&gt;]</code></pre>
@@ -50,7 +50,7 @@
 </ul>
 <p>Example:</p>
 <pre><code>bin/console phpillip:build my-domain.com</code></pre>
-<h2>Watch</h2>
+<h2 id="watch">Watch</h2>
 <p>Have Phpillip watch for any change in <code>/src</code> and rebuild the files automatically:</p>
 <p><strong>Usage:</strong></p>
 <pre><code>phpillip:watch [options]</code></pre>
@@ -60,7 +60,7 @@
 </ul>
 <p>Example:</p>
 <pre><code>bin/console phpillip:watch</code></pre>
-<h2>Serve</h2>
+<h2 id="serve">Serve</h2>
 <p>You can also live-preview your website without building it by launching the Phpillip local PHP server:</p>
 <p><strong>Usage:</strong></p>
 <pre><code>phpillip:serve [options] [--] [&lt;address&gt;]</code></pre>
@@ -163,6 +163,11 @@ bin/console p:s</code></pre>
                             <li class="nav-item">
             <a class="nav-link " href="/feature-sitemap">
                 Sitemap
+            </a>
+        </li>
+                            <li class="nav-item">
+            <a class="nav-link " href="/feature-twig">
+                Twig utils
             </a>
         </li>
     </ul>

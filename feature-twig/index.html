@@ -6,19 +6,19 @@
             <meta http-equiv="x-ua-compatible" content="ie=edge">
 
                         
-            <title>Supported formats | Phpillip</title>
+            <title>Twig utils | Phpillip</title>
             <meta name="description" content="Phpillip documentation">
             <meta name="author" content="Thomas Jarrand">
 
                 <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="http://phpillip.github.io/content-formats">
+    <meta name="twitter:url" content="http://phpillip.github.io/feature-twig">
     <meta name="twitter:site" content="@tom32i">
     <meta name="twitter:title" content="Phpillip">
     <meta name="twitter:description" content="Phpillip: A static website generator for #Symfony developers">
     <meta property="twitter:image" content="http://phpillip.github.io/phpillip.png">
 
 
-            <link rel="canonical" href="http://phpillip.github.io/content-formats">
+            <link rel="canonical" href="http://phpillip.github.io/feature-twig">
         
                     <link rel="stylesheet" href="/css/style.css">
         
@@ -29,77 +29,20 @@
 <div id="#top" class="container">
     <div class="row">
         <div class="content col-sm-9">
-                <h1 id="supported-formats">Supported formats</h1>
-<p>Phpillip already supports the following content formats:</p>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>Extension</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Markdown</td>
-<td>*.md</td>
-</tr>
-<tr>
-<td>YAML</td>
-<td>*.yml</td>
-</tr>
-<tr>
-<td>JSON</td>
-<td>*.json</td>
-</tr>
-<tr>
-<td>XML</td>
-<td>*.xml</td>
-</tr>
-</tbody>
-</table>
-<h2 id="markdown">Markdown</h2>
-<p>The Markdown format gets a special treatment and <a href="/content-markdown">has its own documentation section</a>.</p>
-<h2 id="support-your-own-format">Support your own format</h2>
-<p>In Phpillip, the <code>decoder</code> service is responsible for parsing content.
-The decoder is a Symfony <em>Serializer</em> filled with a Symfony <em>Decoder</em> for each format.</p>
-<blockquote>
-<p>If you're curious, have a look at <code>Phpillip\Provider\DecoderServiceProvider</code>.</p>
-</blockquote>
-<p>To support a new format, just create class that implement <code>Symfony\Component\Serializer\Encoder\DecoderInterface</code>:</p>
-<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">Decoder</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">Symfony\Component\Serializer\Encoder\DecoderInterface</span><span class="p">;</span>
-
-<span class="sd">/**</span>
-<span class="sd"> * Decode my custom format</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">MyCustomDecoder</span> <span class="k">implements</span> <span class="nx">DecoderInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * {@inheritdoc}</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">supportsDecoding</span><span class="p">(</span><span class="nv">$format</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$format</span> <span class="o">===</span> <span class="s1">&#39;my-custom-format&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="sd">/**</span>
-<span class="sd">     * {@inheritdoc}</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">decode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$format</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$context</span> <span class="o">=</span> <span class="k">array</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSomethingWith</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+                <h1 id="twig-utils">Twig utils</h1>
+<p>Phpillip register some Twig extensions to provide the following filters and functions:</p>
+<h2 id="functions">Functions</h2>
+<p><strong>public:</strong> Get the relative or absolute url to a file in the public folder.</p>
+<p>Get the relative url to a stylesheet:</p>
+<pre><code class="language-twig"><span></span><span class="x">&lt;link rel=&quot;stylesheet&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">public</span><span class="o">(</span><span class="s1">&#39;css/style.css&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
 </code></pre>
-<p>And add it to Phpillip content encoders:</p>
-<pre><code class="language-php"><span></span><span class="cp">&lt;?php</span> 
-<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;content_encoders&#39;</span><span class="p">][]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyCustomDecoder</span><span class="p">();</span>
+<p>Get the absolute url to an image:</p>
+<pre><code class="language-twig"><span></span><span class="x">&lt;meta name=&quot;twitter:image&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">public</span><span class="o">(</span><span class="s1">&#39;img/twitter.png&#39;</span><span class="o">,</span> <span class="kp">true</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
 </code></pre>
-<p>Files matching your custom format will now be parsed among the others.</p>
-<p><strong>Note:</strong> To know more about how Phpillip parses contents have a look at <a href="/content-property-handlers">property handlers</a>.</p>
+<h2 id="filters">Filters</h2>
+<p><strong>markdown:</strong> Parse a mardown string to HTML.</p>
+<pre><code class="language-twig"><span></span><span class="cp">{{</span> <span class="s1">&#39;My *markdown* sentence&#39;</span><span class="o">|</span><span class="nf">markdown</span> <span class="cp">}}</span><span class="x"></span>
+</code></pre>
         </div>
         <div class="side-bar col-sm-3">
             <a id="logo" class="logo" href="/">
@@ -121,7 +64,7 @@ The decoder is a Symfony <em>Serializer</em> filled with a Symfony <em>Decoder</
 </h5>
 <ul class="category nav nav-pills nav-stacked">
                             <li class="nav-item">
-            <a class="nav-link active" href="/content-formats">
+            <a class="nav-link " href="/content-formats">
                 Supported formats
             </a>
         </li>
@@ -181,7 +124,7 @@ The decoder is a Symfony <em>Serializer</em> filled with a Symfony <em>Decoder</
             </a>
         </li>
                             <li class="nav-item">
-            <a class="nav-link " href="/feature-twig">
+            <a class="nav-link active" href="/feature-twig">
                 Twig utils
             </a>
         </li>
